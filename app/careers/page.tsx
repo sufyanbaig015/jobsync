@@ -42,9 +42,9 @@ export default function Page() {
     )
   })
 
-if (loading) {
-  return <Loader />
-}
+  if (loading) {
+    return <Loader />
+  }
 
   if (error) {
     return <div className="text-center py-10 text-xl text-red-600">{error}</div>
