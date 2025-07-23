@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge"
 import Link from "next/link"
 import { MapPin, Clock, DollarSign, Briefcase, ArrowLeft } from "lucide-react"
 import { fetchJobsFromSheet, Job } from "@/lib/fetchJobsFromSheet"
+import { Loader } from "@/components/ui/Loader"
 
 // actual Google Sheet ID and GID
 const SHEET_ID = "1csNdO--Rxuoyy-O7KYIrRvQ_JZJlMtXoGS8gM68Dl3A";
@@ -41,9 +42,9 @@ export default function Page() {
     )
   })
 
-  if (loading) {
-    return <div className="text-center py-10 text-xl justify-center">⏳ Loading job listings...</div>
-  }
+if (loading) {
+  return <Loader />
+}
 
   if (error) {
     return <div className="text-center py-10 text-xl text-red-600">{error}</div>
